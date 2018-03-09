@@ -1,19 +1,21 @@
-<div class="container custom-container">
-  <div class="row">
-    <h1 class="text-center">Progress Bars</h1>
-  </div>
-  <div class="row row-margin" *ngFor="let progressBar of pBarValuePair ; let i=index">
-    <progress-line [barCount]="progressBar.value" [limit]="progressBars.limit"></progress-line>
-  </div>
-  <div class="row row-margin ">
-    <div class="col-sm-3 row-bottom">
-      <select (change)="selectedProgressBar($event)" class="form-control">
-        <option *ngFor="let progress of progressBars.bars ; let i=index" value="{{i}}">Progress Bar #{{i+1}}</option>
-      </select>
+<div class="main-container">
+  <div class="container custom-container">
+    <div class="row">
+      <h1 class="text-center">Singtel Demo App <small>Progress Bars</small></h1>
     </div>
-    <div class="col-sm-9 ">
-      <div class="btn-group btn-group-justified">
-        <a *ngFor="let button of progressBars.buttons ; let i=index" href="#" class="btn btn-primary" (click)="btnOnClick($event, button)">{{button}}</a>
+    <div class="row row-margin" *ngFor="let progressBar of pBarValuePair ; let i=index">
+      <progress-line [barCount]="progressBar.value" [limit]="progressBars.limit"></progress-line>
+    </div>
+    <div class="row row-margin ">
+      <div class="col-sm-3 row-bottom">
+        <select (change)="selectedProgressBar($event)" class="form-control">
+          <option *ngFor="let progress of progressBars.bars ; let i=index" value="{{i}}">Progress Bar #{{i+1}}</option>
+        </select>
+      </div>
+      <div class="col-sm-9 ">
+        <div class="btn-group btn-group-justified">
+          <a *ngFor="let button of progressBars.buttons ; let i=index" href="#" class="btn btn-primary" (click)="btnOnClick($event, button)">{{button}}</a>
+        </div>
       </div>
     </div>
   </div>
